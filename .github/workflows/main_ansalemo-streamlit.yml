@@ -68,11 +68,12 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_EC4EBD2D989B430899594B4F4B9E6BB1 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_83FAA222F2E04B6AB629F4493ACF5A03 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_19AF388E88694265A311D1F4F1468F7A }}
-
+  
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
           app-name: 'ansalemo-streamlit'
           slot-name: 'Production'
+          startup-command: 'streamlit run app.py'
           
