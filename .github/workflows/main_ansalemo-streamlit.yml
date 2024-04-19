@@ -75,5 +75,5 @@ jobs:
         with:
           app-name: 'ansalemo-streamlit'
           slot-name: 'Production'
-          startup-command: 'streamlit run app.py'
+          startup-command: 'streamlit run app.py --server.address=0.0.0.0 --server.port=8000'
           
